@@ -1,7 +1,11 @@
 {
   "name": "react-native-adyen-payment",
   "title": "React Native Adyen Payment",
+<<<<<<< HEAD
   "version": "1.7.0",
+=======
+  "version": "1.6.2",
+>>>>>>> Update package.json
   "description": "React Native Adyen Payment Native Module",
   "main": "index.js",
   "scripts": {
