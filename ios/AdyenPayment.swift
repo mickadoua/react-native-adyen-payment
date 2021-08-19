@@ -126,6 +126,7 @@ class AdyenPayment: RCTEventEmitter {
             if(!bcmcComponent.isEmpty){
                 let component = BCMCComponent(paymentMethod: paymentMethod, publicKey: bcmcComponent["card_public_key"] as! String)
                     component.delegate = self
+                    component.showsStorePaymentMethodField = bcmcComponent["showsStorePaymentMethodField"] as? Bool ?? false
                     self.present(component)
                 }
             }
@@ -274,6 +275,7 @@ class AdyenPayment: RCTEventEmitter {
         let bcmcComponent : [String:Any] = componentData["bcmc"] as? [String:Any] ?? [:]
         if(!bcmcComponent.isEmpty){
             configuration.card.publicKey = bcmcComponent["card_public_key"] as? String
+            configuration.card.showsStorePaymentMethodField = bcmcComponent["showsStorePaymentMethodField"] as? Bool ?? false
         }
         if(!appleComponent.isEmpty){
             configuration.applePay.merchantIdentifier = appleComponent["apple_pay_merchant_id"] as? String
